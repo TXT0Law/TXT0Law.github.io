@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let Forecast_url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`;
         let Weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${name}&lat=${lat}&lon=${lon}&appid=${api_key}`;
         let Air_pullution_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}`;
-
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         
@@ -136,8 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <hr>
                     <div class="card_footer">
-                        <p><i class="fa-solid fa-calendar fa-2x"></i> ${days[date.getDay()]}, ${date.getDate()}, ${months[date. getMonth()]}, ${date.getFullYear()}</p>
-                        <p><i class="fa-solid fa-location-dot fa-2x"></i> ${name}, ${country}</p>
+                        <p><i class="fa-solid fa-calendar fa-2x"></i><b> ${days[date.getDay()]}, ${date.getDate()}, ${months[date. getMonth()]}, ${date.getFullYear()}</b></p>
+                        <p><i class="fa-solid fa-location-dot fa-2x"></i><b> ${name}, ${country}</b></p>
                     </div>
                 `;
                
@@ -221,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => {
                 console.error("There has been a problem with your fetch operation:", error);
             });
+
     }
     window.getWeatherData = getWeatherData; // Expose the function to the global
 
